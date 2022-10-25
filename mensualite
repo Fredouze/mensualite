@@ -1,0 +1,15 @@
+<?php
+
+function CalculMensualits($mensualite, $pourcent_annuel, $prix)
+{
+    $t_mensuel = $pourcent_annuel / 12;
+    $t_mensuel = $t_mensuel / 100;
+    $R = (1 - pow((1 + $t_mensuel), -$mensualite)) / $t_mensuel;
+
+    $VPM = (($prix) / $R);
+
+    return $VPM;
+}
+
+
+?>
